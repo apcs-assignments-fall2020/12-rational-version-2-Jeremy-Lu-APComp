@@ -133,7 +133,7 @@ public class Rational
         return recip;
     }
 
-    // These following methods are NOT static, we'll talk about them next class!
+    // These following methods are NOT Static, we'll talk about them next class!
     // This returns a string representation of a Rational (e.g. "1/2")
     @Override
     public String toString()
