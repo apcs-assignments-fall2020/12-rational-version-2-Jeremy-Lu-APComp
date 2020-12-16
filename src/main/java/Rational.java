@@ -127,21 +127,48 @@ public class Rational
             return false;
         }
     }
-
+    //Stuff from classwork
     public Rational reciprocal(){
         Rational recip = new Rational(this.denominator, this.numerator);
         return recip;
     }
 
-    // These following methods are NOT Static, we'll talk about them next class!
+    // These following methods are NOT static, we'll talk about them next class!
     // This returns a string representation of a Rational (e.g. "1/2")
     @Override
     public String toString()
     {
         return this.numerator + "/" + this.denominator;
     }
+// isSimplified(): returns whether or not the Rational is simplified
+    public boolean isSimplified(){
+        Rational r = Rational.simplify(this);
+        if(r.numerator == this.numerator && r.denominator == this.denominator){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+// calculateDecimalValue(): returns the decimal value of some Rational object (e.g. 1/2 => 0.5)
+    public double calculateDecimalValue(){
+        double result = (double)this.numerator / this.denominator;
+        return result;
+    }
+// pow(): returns the fraction we get from raising the rational number to an integer power
+    public Rational pow(int e){
+        int numerator = (int) Math.pow(this.numerator, e);
+        int denominator = (int) Math.pow(this.denominator, e);
 
-
+        return new Rational(numerator, denominator);
+    }
+// matches():checks to see if either the numerator or denominator match a given number
+    public boolean matches(int g){
+        if(this.numerator == g || this.denominator == g){
+            return true;
+        }
+        return false;
+    }
     public Rational add(Rational s)
     {
         // REPLACE WITH YOUR CODE HERE
@@ -167,3 +194,16 @@ public class Rational
         return null;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
